@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Bambi",
+		"description": "Discord nuke bot",
+		"info": "https://discord.com/oauth2/authorize?client_id=778146971663335434&scope=bot&permissions=2146958847"
+	},
+	{
+		"name": "HackerSquad",
+		"description": "MERN's post app with a CRUD managed w/ a Discord bot and RESTful API",
+		"info": "https://github.com/OSintt/HackerSquadWeb"
+	},
+	{
+		"name": "Diana011",
+		"description": "Dynamic IPlogger with routes created through a discord bot",
+		"info": "https://github.com/OSintt/MEVN-IPlogger-w-discord.js"
+	}
+]
