@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import { Discord, Github, Google } from 'react-bootstrap-icons';
-function Contact() {
+;
+function Contact(props) {
+
 	return (
 		<div>
 			<Slide bottom>
@@ -13,13 +15,13 @@ function Contact() {
 						<p><strong>You can find me on:</strong></p>
 						<ul>
 							<li>
-								<a target="_blank" href="https://discord.gg/gPQaN8GTQT"><Discord size={40}/></a>
+								<a target="_blank" href="https://discord.gg/gPQaN8GTQT" rel="noreferrer"><Discord size={40}/></a>
 							</li>
 							<li>
-								<a target="_blank" href="https://github.com/OSintt"><Github size={40}/></a>
+								<a target="_blank" href="https://github.com/OSintt" rel="noreferrer"><Github size={40}/></a>
 							</li>
 							<li>
-								<a target="_blank" href="mailto:osintaxis@gmx.com"><Google size={40}/></a>
+								<a target="_blank" href="mailto:osintaxis@gmx.com" rel="noreferrer"><Google size={40}/></a>
 							</li>
 						</ul>
 						<Link className="cross" to="/">🍩 <span>Go back</span></Link>

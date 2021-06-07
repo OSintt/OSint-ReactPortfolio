@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import av from "../assets/croav.gif";
@@ -9,18 +9,14 @@ function random() {
 	let stuff = ["MEVN x MERN", "Donuts", "ES6", "SPAs", "0 8 0 0", "Node.js", "Hker$hit", "$", "Sweet"];
 	return stuff[Math.floor(Math.random() * stuff.length)];
 }
-function Home() {
+function Home(props) {
   const [stuff, setStuff] = useState(random());
-
-  useEffect(() => {
-  	return random();
-  });
 
   return (
     <div>
       <Slide bottom>
         <div className="container">
-        <img src={av}/>
+        <img src={av} alt="av"/>
           	<h1>O$int#0800</h1>
           	<div className="body">
             	<hr/>

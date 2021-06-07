@@ -129,7 +129,14 @@ ul li:hover {
 .error code {
   display: block;
 }
-
+.audio {
+  background: none;
+  color: #fff;
+  border: none;
+}
+.audio:hover {
+  cursor: pointer;
+}
 @media (max-width: 758px) {
   body {
     background: url("./assets/crobg.gif");
@@ -172,6 +179,14 @@ ul li:hover {
   }
   .container .body .doughnut {
     margin: auto;
+  }
+  .audio {
+    margin: auto;
+    display: block;
+    font-size: 16px;
+  }
+  .audio code span {
+    display: none;
   }
 } 
 

@@ -5,10 +5,15 @@ import Projects from './components/projects';
 import { NavLink as Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
+import Audio from './components/audio';
 
 function App() {
+
   return (
     <Router>
+      <Slide left>
+        <Audio />
+      </Slide>
       <Switch>
         <Route exact path="/">
           <Home />

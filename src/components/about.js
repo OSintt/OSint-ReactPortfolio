@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 
-function About() {
+function About(props) {
 	return (
 		<div>
 			<Slide bottom>
