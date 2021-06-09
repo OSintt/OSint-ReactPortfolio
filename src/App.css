@@ -128,6 +128,7 @@ ul li:hover {
 }
 .error code {
   display: block;
+  margin: 1rem 0;
 }
 .audio {
   background: none;
@@ -138,14 +139,7 @@ ul li:hover {
   cursor: pointer;
 }
 @media (max-width: 758px) {
-  body {
-    background: url("./assets/crobg.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    box-shadow: inset 0 0 0 1000px #23272A;
-    opacity: 0.9;
-  }
+
   .body {
     align-items: center;
   }
@@ -159,13 +153,27 @@ ul li:hover {
     background: none;
     margin: auto;
     padding: auto;
+    text-align: center;
+    height: 100%;
+    width: 100%;
   }
   .container img {
     float: none;
   }
-  .container h1 {
+  .container h3 {
+    align-self: center;
     text-align: center;
     margin-top: 10px;
+    display: inline-block;
+  }
+  .container h6 {
+    display: inline;
+    margin: auto;
+  }
+  .container p {
+    text-align: center;
+    display: block;
+
   }
   .hr {
     display: block;
@@ -181,6 +189,7 @@ ul li:hover {
     margin: auto;
   }
   .audio {
+    position: relative;
     margin: auto;
     display: block;
     font-size: 16px;

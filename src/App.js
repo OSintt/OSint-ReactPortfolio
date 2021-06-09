@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import Audio from './components/audio';
 
+
 function App() {
 
   return (
