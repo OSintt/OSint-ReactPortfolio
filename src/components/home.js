@@ -16,7 +16,7 @@ function Home(props) {
     <div>
       <Slide bottom>
         <div className="container">
-        <img src={av} alt="av"/>
+        <img src={av} alt="C.R.O Avatar"/>
           	<h1>O$int#0800</h1>
           	<div className="body">
             	<hr/>

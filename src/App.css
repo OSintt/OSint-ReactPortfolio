@@ -18,17 +18,21 @@ a {
   margin: 0 2rem;
   text-align: center;
   background: black;
-  border-radius: 5px;
+  border-radius: 0;
+  border-top-left-radius: 5px; 
   border: 1px solid whitesmoke;
   opacity: 0.9 !important;
 }
 h1 {
   text-align: left;
-  margin: auto 0;
+  margin: auto;
   padding: 0;
   color: #9c9c9c;
 }
-
+h1:hover {
+  color: #7289da;
+  cursor: pointer;
+}
 .container img {
   border-radius: 50%;
   width: 40%;
@@ -83,6 +87,7 @@ p code {
 .titles {
   text-align: center;
 }
+
 .hr {
   display: none;
 }
@@ -173,7 +178,10 @@ ul li:hover {
   .container p {
     text-align: center;
     display: block;
-
+  }
+  .container h1 {
+    text-align: center;
+    margin-top: 2.5px;
   }
   .hr {
     display: block;
