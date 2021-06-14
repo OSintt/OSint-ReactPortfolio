@@ -16,13 +16,13 @@ export default class Audio extends React.Component {
   handlePlay () {
     this.setState({
       playing: true
-    })
+    });
   }
 
   handlePause () {
     this.setState({
       playing: false
-    })
+    });
   }
 
   render () {

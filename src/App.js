@@ -6,10 +6,19 @@ import { NavLink as Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import Audio from './components/audio';
+import { useEffect } from 'react';
 
 
 function App() {
-
+  useEffect(async () => {
+    const osint = ["O", "$", "i", "n", "t", "#", "0", "8", "0", "0"]
+    for (let x = 0; x < osint.length; x++) {
+      document.title += osint[x]
+      await new Promise(async resolve => {
+        setTimeout(resolve, 1500);
+      });
+    }
+  });
   return (
     <Router>
       <Slide left>
