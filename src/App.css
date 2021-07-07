@@ -35,7 +35,8 @@ h1:hover {
 }
 .container img {
   border-radius: 50%;
-  width: 40%;
+  width: 169.59px;
+  height: 169.59px;
   border: 2px solid #fff;
   float: left;
   margin: 0 1rem;
@@ -214,7 +215,7 @@ ul li:hover {
   .loading h1 {
     text-align: left;
   }
-  
+
   .container .body .doughnut {
     margin: auto;
   }
