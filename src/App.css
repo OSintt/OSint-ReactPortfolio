@@ -135,6 +135,18 @@ ul li:hover {
   display: block;
   margin: 1rem 0;
 }
+
+.loading code {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.loading img {
+  float: right;
+  margin: 1rem;
+  width: 10%;
+}
+
 .audio {
   background: none;
   color: #fff;
@@ -193,6 +205,16 @@ ul li:hover {
     margin: 0 3rem;
     font-size: 15px; 
   }
+
+  .loading {
+    margin: 0 3rem;
+    font-size: 15px;
+  }
+
+  .loading h1 {
+    text-align: left;
+  }
+  
   .container .body .doughnut {
     margin: auto;
   }

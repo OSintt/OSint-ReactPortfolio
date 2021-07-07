@@ -1,12 +1,15 @@
-import Home from './components/home';
-import About from './components/about';
-import Contact from './components/contact';
-import Projects from './components/projects';
+import { useEffect, Suspense, lazy } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import Audio from './components/audio';
-import { useEffect } from 'react';
+import LoadingScreen from './components/loadingScreen';
+import './App.css';
+
+const Home = lazy(() => import('./components/home'));
+const Projects = lazy(() => import('./components/contact'));
+const Contact = lazy(() => import('./components/contact'));
+const About = lazy(() => import('./components/about'));
 
 
 function App() {
@@ -31,26 +34,36 @@ function App() {
       </Slide>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Suspense fallback={<LoadingScreen />}>
+            <Home />
+          </Suspense>
         </Route>
         <Route exact path="/about">
-          <About />
+          <Suspense fallback={<LoadingScreen />}>
+            <About />
+          </Suspense>
         </Route>
         <Route exact path="/contact">
-          <Contact />
+          <Suspense fallback={<LoadingScreen />}>
+            <Contact />
+          </Suspense>
         </Route>
         <Route exact path="/projects">
-          <Projects />
+          <Suspense fallback={<LoadingScreen />}>
+            <Projects />
+          </Suspense>
         </Route>
         <Route path="*">
-          <Slide bottom>
-            <div className="error">
-              <h1>Error 404</h1>
-              <hr/>
-              <code>TypeError:<br/>cannot read property "page" of undefined</code>
-              <Link className="cross" to="/">🍩<span> Go back</span></Link>
-            </div>
-          </Slide>
+          <Suspense fallback={<LoadingScreen />}>
+            <Slide bottom>
+              <div className="error">
+                <h1>Error 404</h1>
+                <hr/>
+                <code>TypeError:<br/>cannot read property "page" of undefined</code>
+                <Link className="cross" to="/">🍩<span> Go back</span></Link>
+              </div>
+            </Slide>
+          </Suspense>
         </Route>
       </Switch>
     </Router>

@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
-import '../App.css';
 
 function random() {
 	let stuff = ["MEVN x MERN", "Donuts", "ES6", "SPAs", "0 8 0 0", "Node.js", "Hker$hit", "$", "Mxnly"];
