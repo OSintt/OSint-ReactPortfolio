@@ -12,7 +12,7 @@ function About(props) {
 						<hr/>
 						<p>
 						Hello, my name is OSint.<br/> 
-						I'm a junior fullstack web developer who loves JavaScript, TypeScript and back-end w/ Node.js<br/>
+						I'm a junior fullstack web developer who loves JavaScript, TypeScript and back-end w/ Node.js, GraphQL and Rest API<br/>
 						</p>
 						<Link className="cross" to="/">🍩 <span>Go back</span></Link>
 						<hr className="hr"/>

@@ -2,21 +2,31 @@ import React from 'react';
 import { useState } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
-import av from "../assets/croav.gif";
 import '../App.css';
 
 function random() {
-	let stuff = ["MEVN x MERN", "Donuts", "ES6", "SPAs", "0 8 0 0", "Node.js", "Hker$hit", "$", "Sweet"];
+	let stuff = ["MEVN x MERN", "Donuts", "ES6", "SPAs", "0 8 0 0", "Node.js", "Hker$hit", "$", "Mxnly"];
 	return stuff[Math.floor(Math.random() * stuff.length)];
 }
 function Home(props) {
   const [stuff, setStuff] = useState(random());
-
+  let [clicks, setClicks] = useState(0);
   return (
     <div>
       <Slide bottom>
         <div className="container">
-        <img src={av} alt="C.R.O Avatar"/>
+        <img src="https://cdn.discordapp.com/attachments/854166737807998986/862419721718595584/croav.gif" alt="C.R.O Avatar" onClick={() => {
+          if (!window.localStorage.easter) {
+            let newClicks = clicks + 1; 
+            setClicks(newClicks);
+            if (clicks === 50) {
+              localStorage.setItem('easter', true);
+              alert("yoks puto");
+            }
+          } else {
+            return;
+          }
+        }}/>
           	<h1>O$int#0800</h1>
           	<div className="body">
             	<hr/>

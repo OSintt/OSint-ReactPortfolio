@@ -10,15 +10,20 @@ import { useEffect } from 'react';
 
 
 function App() {
-  useEffect(async () => {
-    const osint = ["O", "$", "i", "n", "t", "#", "0", "8", "0", "0"]
-    for (let x = 0; x < osint.length; x++) {
-      document.title += osint[x]
-      await new Promise(async resolve => {
-        setTimeout(resolve, 1500);
-      });
+  useEffect(() => {
+    async function changeTitle() { 
+      const osint = ["O", "$", "i", "n", "t", "#", "0", "8", "0", "0"];
+      document.title = "";
+      for (let x = 0; x < osint.length; x++) {
+        document.title += osint[x];
+        await new Promise(async resolve => {
+          setTimeout(resolve, 1500);
+        });
+      }
     }
-  });
+    changeTitle();
+  }, []);
+
   return (
     <Router>
       <Slide left>
