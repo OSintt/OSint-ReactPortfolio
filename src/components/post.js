@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { url } from '../config.json';
+import { url } from './config.json';
 
 export default function Post() {
 	const [wordCount, setWordCount] = useState(0);

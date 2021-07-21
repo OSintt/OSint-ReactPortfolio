@@ -15,7 +15,7 @@ const Comments = lazy(() => import('./components/comments'));
 const Post = lazy(() => import('./components/post'));
 const Admin = lazy(() => import('./components/admin'));
 
-import { url } from '../config.json';
+import { url } from './components/config.json';
 
 function App() {
   const [isAdmin, setAdmin] = useState(false);

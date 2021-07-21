@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Slide from 'react-reveal/Slide';
-import { url } from '../config.json';
+import { url } from './config.json';
 dayjs.extend(relativeTime);
 
 export default function Comments(props) {

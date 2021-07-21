@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import axios from 'axios';
 
-import { url } from '../config.json';
+import { url } from './config.json';
 
 export default function Admin(props) {
 
