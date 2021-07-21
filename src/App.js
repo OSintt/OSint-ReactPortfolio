@@ -6,6 +6,7 @@ import Slide from 'react-reveal/Slide';
 import Audio from './components/audio';
 import LoadingScreen from './components/loadingScreen';
 import './App.css';
+import { url } from './components/config.json';
 
 const Home = lazy(() => import('./components/home'));
 const Projects = lazy(() => import('./components/projects'));
@@ -14,8 +15,6 @@ const About = lazy(() => import('./components/about'));
 const Comments = lazy(() => import('./components/comments'));
 const Post = lazy(() => import('./components/post'));
 const Admin = lazy(() => import('./components/admin'));
-
-import { url } from './components/config.json';
 
 function App() {
   const [isAdmin, setAdmin] = useState(false);
