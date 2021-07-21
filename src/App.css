@@ -3,10 +3,10 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
   margin: 0;
-  min-height: 100vh;
+  min-height: 105vh;
   display: grid;
   place-items: center;
-  overflow-y: hidden;
+  
 }
 a {
   text-decoration: none;
@@ -59,6 +59,7 @@ p code {
   display: block;
   margin: 5px auto;
 }
+
 .cross {
   display: inline;
   cursor: pointer;
@@ -156,6 +157,129 @@ ul li:hover {
 .audio:hover {
   cursor: pointer;
 }
+.comment-button {
+  float: right;
+  border: none;
+  background: none;
+  color: #fff;
+  font-family: monospace;
+  padding: 0 2em;
+}
+.comment-button:hover {
+  cursor: pointer;
+}
+
+input {
+  font-family: monospace;
+  padding: 5px;
+  margin: .5em 0;
+  border: 1px solid #fff;
+  border-radius: 0;
+  outline: 0;
+  width: 100%;
+  margin-right: 8px;
+}
+
+textarea {
+  border: 1px solid #000;
+  padding: 5px;
+  margin: 0;
+  border-radius: 0;
+  resize: none;
+  outline: 0;
+  width: 100%;
+  margin-right: 8px;
+}
+.send-comment {
+  padding: 1px;
+  margin: 0;
+  text-align: left;
+  font-family: monospace;
+  transition: .1s color ease-in-out;
+}
+
+.send-comment .send-button:hover {
+  cursor: pointer;
+  color: #7289da;
+}
+.word-count {
+  float: right;
+}
+.title-comments {
+  color:  slategray;
+}
+.comment-container {
+  width: 500px;
+  text-align: center;
+
+}
+
+.comment-box {
+  text-align: left;
+}
+
+.comment-card {
+  font-family: monospace;
+  padding: 1px 5px;
+  border-radius: 0;
+  outline: 0;
+  margin:  10px;
+  border:  1px solid #fff;
+  word-break: break-all;
+  background: rgba(0, 0, 0, 0.7);
+  transition: .2s all ease-in-out;
+}
+.comment-card h2 {
+  margin: 2px;
+  color: gray;
+  display: inline-block;
+}
+
+.comment-card:hover {
+  border: 1px solid #7289da;
+  background: black;
+}
+
+.comment-card:hover h2 {
+  color: #7289da;
+  cursor: pointer;
+}
+
+.comment-card code {
+  float: right;
+}
+.comment-box p {
+  font-size: 16px;
+  margin: 0 0 3px 0;
+}
+
+.comment-box code {
+  display:  block;
+  text-align: right;
+  margin: 0;
+}
+
+.display-none {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+input:focus, textarea:focus {
+  background: #f4f4f4;
+}
+
+
 @media (max-width: 758px) {
 
   .body {
@@ -177,6 +301,8 @@ ul li:hover {
   }
   .container img {
     float: none;
+    width: 210px;
+    height: 210px;
   }
   .container h3 {
     align-self: center;
@@ -227,6 +353,19 @@ ul li:hover {
   }
   .audio code span {
     display: none;
+  }
+  textarea {
+    height: 100px;
+  }
+  .comment-container {
+    width: 100%;
+  }
+
+
+  .comment-button {
+    float:  none;
+    display:  block;
+    text-align: center;
   }
 } 
 

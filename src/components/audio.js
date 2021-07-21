@@ -1,6 +1,7 @@
 import React from 'react';
 import audio from '../assets/cro-rockiando.mp3';
 import ReactHowler from 'react-howler'
+import Slide from 'react-reveal/Slide';
 
 export default class Audio extends React.Component {
   constructor (props) {
@@ -26,6 +27,7 @@ export default class Audio extends React.Component {
   }
 
   render () {
+    const { location } = this.props;
     return (
       <div>
         <ReactHowler
@@ -33,7 +35,9 @@ export default class Audio extends React.Component {
           playing={this.state.playing}
           volume={0.05}
         />
-        <button className="audio" onClick={this.state.playing ? this.handlePause : this.handlePlay}><code>🍭 <span>Play/Stop</span></code></button>
+        <Slide left>
+          <button className={location.pathname === "/" ? "audio": "display-none"} onClick={this.state.playing ? this.handlePause : this.handlePlay}><code>🍭 <span>Play/Stop</span></code></button>
+        </Slide>
       </div>
     )
   }

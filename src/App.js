@@ -1,18 +1,25 @@
-import { useEffect, Suspense, lazy } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import Slide from 'react-reveal/Slide';
 import Audio from './components/audio';
 import LoadingScreen from './components/loadingScreen';
 import './App.css';
 
 const Home = lazy(() => import('./components/home'));
-const Projects = lazy(() => import('./components/contact'));
+const Projects = lazy(() => import('./components/projects'));
 const Contact = lazy(() => import('./components/contact'));
 const About = lazy(() => import('./components/about'));
+const Comments = lazy(() => import('./components/comments'));
+const Post = lazy(() => import('./components/post'));
+const Admin = lazy(() => import('./components/admin'));
 
+import { url } from '../config.json';
 
 function App() {
+  const [isAdmin, setAdmin] = useState(false);
+
   useEffect(() => {
     async function changeTitle() { 
       const osint = ["O", "$", "i", "n", "t", "#", "0", "8", "0", "0"];
@@ -27,12 +34,33 @@ function App() {
     changeTitle();
   }, []);
 
+  useEffect(() => {
+    async function checkAdmin() {
+      if (window.localStorage.token !== null) {
+
+        let res = await axios.get(`${url}/api/checkadm`, 
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('token')
+          }
+        })
+        
+        if (res.data.message === true) return setAdmin(true);
+      }
+    }
+    checkAdmin(); 
+  }, []);
+
   return (
     <Router>
-      <Slide left>
-        <Audio />
-      </Slide>
+      <Route path="/" component={Audio} />
       <Switch>
+        <Route exact path="/admin-login">
+          <Suspense fallback={<LoadingScreen/>}>
+            <Admin setAdmin={setAdmin}/>
+          </Suspense>
+        </Route>
         <Route exact path="/">
           <Suspense fallback={<LoadingScreen />}>
             <Home />
@@ -53,6 +81,16 @@ function App() {
             <Projects />
           </Suspense>
         </Route>
+        <Route exact path="/post">
+          <Suspense fallback={<LoadingScreen />}>
+            <Post />
+          </Suspense>
+        </Route>
+        <Route path="/comments">
+          <Suspense fallback={<LoadingScreen/>}>
+            <Comments isAdmin={isAdmin}/>
+          </Suspense>
+        </Route>
         <Route path="*">
           <Suspense fallback={<LoadingScreen />}>
             <Slide bottom>
@@ -65,6 +103,7 @@ function App() {
             </Slide>
           </Suspense>
         </Route>
+
       </Switch>
     </Router>
   );
