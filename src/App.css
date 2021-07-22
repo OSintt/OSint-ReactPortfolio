@@ -118,18 +118,35 @@ ul li:hover {
 
 .projects {
   display: block;
-  margin: 0;
+  margin: 10px 0;
+  
 }
 .projects h3 {
   margin: 0;
   text-align: left;
 }
+.projects h3:hover {
+  color:  #7289da;
+  cursor:  pointer;
+}
+
+.projects a {
+  font-size: 20px;
+  float:  right;
+  transition: .2s all ease-in-out;
+}
+
+.projects a:hover {
+  opacity: .6;
+}
+
 .projects p, h6 {
   text-align: left;
   font-family: monospace;
   font-size: 12px;
   margin: 1rem 0 1rem 10px;
 }
+
 .projects h6:hover {
   cursor: pointer;
 }
@@ -340,6 +357,11 @@ input:focus, textarea:focus {
 
   .loading h1 {
     text-align: left;
+  }
+
+  .projects a {
+    margin: 0 10px;
+    float:  none;
   }
 
   .container .body .doughnut {

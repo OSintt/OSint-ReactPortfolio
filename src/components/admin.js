@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import axios from 'axios';

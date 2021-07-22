@@ -16,8 +16,8 @@ export default function Projects() {
 							return (
 								<div className="projects" key={i}>
 									<h3>{p.name}</h3>
+									{p.info ? <a href={p.info} target="_blank" rel="noreferrer"><Github /></a> : ""}
 									<p>{p.description}</p>
-									{p.info ? <h6><a href={p.info} target="_blank" rel="noreferrer"><Github /></a></h6> : ""}
 								</div>
 							)	
 						})}
