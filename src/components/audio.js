@@ -1,44 +1,36 @@
 import React from 'react';
+import { useState } from 'react';
 import audio from '../assets/cro-rockiando.mp3';
 import ReactHowler from 'react-howler'
 import Slide from 'react-reveal/Slide';
 
-export default class Audio extends React.Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
-      playing: false
-    }
-    this.handlePlay = this.handlePlay.bind(this)
-    this.handlePause = this.handlePause.bind(this)
+const Audio = (props) => {
+  const [playing, setPlaying] = useState(false);
+
+  const handlePlay = () => {
+    setPlaying(true);
   }
 
-  handlePlay () {
-    this.setState({
-      playing: true
-    });
+  const handlePause = () => {
+    setPlaying(false);
   }
-
-  handlePause () {
-    this.setState({
-      playing: false
-    });
-  }
-
-  render () {
-    const { location } = this.props;
-    return (
-      <div>
-        <ReactHowler
-          src={[audio]}
-          playing={this.state.playing}
-          volume={0.05}
-        />
-        <Slide left>
-          <button className={location.pathname === "/" ? "audio": "display-none"} onClick={this.state.playing ? this.handlePause : this.handlePlay}><code>🍭 <span>Play/Stop</span></code></button>
-        </Slide>
-      </div>
+  const { location } = props;
+  
+  return (
+    <>
+      <ReactHowler
+        src={[audio]}
+        playing={playing}
+        volume={0.08}
+      />
+      <Slide left>
+        <button 
+          className={location.pathname === "/" ? "audio": "display-none"} 
+          onClick={playing ? handlePause : handlePlay}><code>🍭 <span>Play/Stop</span></code></button>
+      </Slide>
+    </>
     )
-  }
 }
+
+export default Audio;

@@ -36,16 +36,18 @@ function App() {
   useEffect(() => {
     async function checkAdmin() {
       if (window.localStorage.token !== null) {
-
-        let res = await axios.get(`${url}/api/checkadm`, 
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-access-token': localStorage.getItem('token')
-          }
-        })
-        
-        if (res.data.message === true) return setAdmin(true);
+        try {
+          const res = await axios.get(`${url}/api/checkadm`, 
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'x-access-token': localStorage.getItem('token')
+            }
+          });
+          if (res.data.message === true) return setAdmin(true);
+        } catch(e) {
+          return setAdmin(false);
+        }
       }
     }
     checkAdmin(); 

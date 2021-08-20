@@ -20,24 +20,20 @@ export default function Post() {
 	if (pathName !== null) return <Redirect to={pathName} /> 
 
 	const onChangeCaptcha = async e => {
-  		console.log("Captcha passed");
   		const recaptchaValue = await recaptchaRef.current.getValue();
 	  	setVerified(recaptchaValue);
 	}
 	const submitCaptcha = async e => {
-		let res = await axios.post(`${url}/api/comments`, {
+		axios.post(`${url}/api/comments`, {
 			author: inputValue,
 			content: textareaValue,
-			date: new Date(),
 			captcha: isVerified
-		});
-		console.log(res.data.success);
-		if (res.data.success !== true) {
+		})
+		.then(res => setPathName("/comments"))
+		.catch(e => {
 			setTriggerBoolean(false);
-			setError(res.data.message);	
-		} else {
-			setPathName("/comments");
-		}
+			setError(e.response.data.message);
+		});
 	}
 	const listenInput = (e) => {
 		setInput(e.target.value);

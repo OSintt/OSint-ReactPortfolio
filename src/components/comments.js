@@ -15,10 +15,14 @@ export default function Comments(props) {
 	useEffect(() => {
 		async function fetchComments() {
 			let sliceQ = matches ? 5 : 7;
-			let res = await axios.get(`${url}/api/comments`);
-			setComments(res.data.sort((a, b) => {
-				return new Date(b.date) - new Date(a.date);
-			}).slice(0, sliceQ));
+			try {
+				const res = await axios.get(`${url}/api/comments`);
+				setComments(res.data.sort((a, b) => {
+					return new Date(b.date) - new Date(a.date);
+				}).slice(0, sliceQ));
+			} catch(e) {
+				console.log(e);
+			}
 		}
 		fetchComments();
 	}, [matches]);
@@ -35,7 +39,7 @@ export default function Comments(props) {
 			commentCopy.splice(commentCopy.indexOf(commentCopy.find(c => c._id === id)), 1);
 			setComments(commentCopy);
 		} catch(e) {
-			console.log(e);
+			console.log(e.response.data.message);
 		}
 	}
 

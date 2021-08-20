@@ -23,16 +23,17 @@ export default function Admin(props) {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		let res = await axios.post(`${url}/api/auth/signin`, {
-			username,
-			password
-		});
-		if (res.data.message) {
-			setError(res.data.message);
-		} else {
+		try {
+			const res = await axios.post(`${url}/api/auth/signin`, {
+				username,
+				password
+			});
 			localStorage.setItem("token", res.data.token);
 			props.setAdmin(true);
-			setPathName("/");
+			setPathName("/");		
+		} catch(e) {
+			console.log(e.response.data.message);
+			setError(e.response.data.message);
 		}
 	}
 	
