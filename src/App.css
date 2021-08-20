@@ -318,9 +318,8 @@ input:focus, textarea:focus {
   }
   .container img {
     float: none;
-    width: 210px;
-    height: 210px;
   }
+  
   .container h3 {
     align-self: center;
     text-align: center;
