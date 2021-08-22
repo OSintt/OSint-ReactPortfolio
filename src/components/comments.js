@@ -17,9 +17,7 @@ export default function Comments(props) {
 			let sliceQ = matches ? 5 : 7;
 			try {
 				const res = await axios.get(`${url}/api/comments`);
-				setComments(res.data.sort((a, b) => {
-					return new Date(b.date) - new Date(a.date);
-				}).slice(0, sliceQ));
+				setComments(res.data.slice(0, sliceQ));
 			} catch(e) {
 				console.log(e);
 			}
@@ -29,7 +27,7 @@ export default function Comments(props) {
 
 	const deleteMessage = async id => {
 		try {
-			await axios.delete(`${url}/api/comments/${id}`, {
+			await axios.delete(`${url}/api/comments/~/${id}`, {
           		headers: {
             		'Content-Type': 'application/json',
             		'x-access-token': localStorage.getItem('token')
